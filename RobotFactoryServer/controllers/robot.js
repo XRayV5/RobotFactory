@@ -1,4 +1,4 @@
-const robotFactory = require('../models/robot') 
+const robotFactory = require('../models/RobotFactory') 
 const makeBatch = function(qty) {
     return robotFactory.makeRobots(qty)
 }

@@ -1,23 +1,17 @@
 import { combineReducers } from 'redux';
-import { getType } from 'typesafe-actions';
+import * as type from "../actions/type";
+import { Robot, RobotState } from '../models'
 
-export type State = {
-    readonly robots: Robot[]
-};
+const initialState: Robot[] = [];  
 
-export type Configuration = Readonly<{
-    hasSentience: boolean, 
-    hasWheels: boolean, 
-    hasTracks: boolean, 
-    numberOfRotors: number, 
-    Colour: string
-}>
+export const robotReducer = combineReducers<RobotState>({
+    robots: (state: Robot[] = initialState, action) => {
+      switch (action.type) {
+        case type.FETCH_BOTS:
+          return [...action.robots];
+        default: return state;
+      }
+    },
+  });
 
-export type statuses = ReadonlyArray<string>
-
-export type Robot = {
-    readonly id: string;
-    readonly name: string;
-    readonly configuration: Configuration;
-    readonly statuses: statuses;
-};
+ 

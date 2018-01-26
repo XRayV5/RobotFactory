@@ -5,11 +5,14 @@
   "author": "Rui Xu",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.17.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "typesafe-actions": "^1.1.2"
+    "redux-thunk": "^2.2.0",
+    "typesafe-actions": "^1.1.2",
+    "utility-types": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "^16.0.34",
@@ -22,7 +25,6 @@
     "tslint-eslint-rules": "^4.1.1",
     "tslint-react": "^3.4.0",
     "typescript": "^2.6.2",
-    "utility-types": "^1.0.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1"
   },

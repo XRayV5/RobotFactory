@@ -4,5 +4,9 @@
         "tslint-eslint-rules",
         "tslint-react",
         "tslint-config-prettier"
-    ]
+    ],
+    "rules": {
+        "interface-name": false,
+        "ordered-imports": false
+    }
 }
