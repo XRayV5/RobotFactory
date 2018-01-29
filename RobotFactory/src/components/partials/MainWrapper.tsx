@@ -1,5 +1,6 @@
 import * as React from "react";
 import { style } from "typestyle";
+import Android from "material-ui/svg-icons/action/android";
 
 import * as injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -15,11 +16,6 @@ const main = style({
   display: "flex",
   flexFlow: "row"
 });
-
-// const headerImg = style({
-//     height: "90px",
-//     margin:"1% 0 1% 3%",
-// })
 
 const ends = style({
   display: "block",
@@ -41,7 +37,9 @@ interface WrapperProps {
 export const MainWrapper = (props: WrapperProps) => (
     <MuiThemeProvider muiTheme={lightMuiTheme}>
         <div className={base}>
-            <header className={ends} />
+            <header className={ends}>
+              <h1 style={{ marginLeft: "10px" }}>Robot <Android /> QA</h1>
+            </header>
             <div className={main}>{props.children}</div>
             <footer className={ends}>
             <div style={{ padding: "3%", fontSize: "14px" }}>
