@@ -6,15 +6,34 @@ export type Configuration = Readonly<{
     Colour: string
 }>
 
-export type statuses = ReadonlyArray<string>
+export type Statuses = ReadonlyArray<string>
 
-export type Robot = {
+export interface Robot{
     readonly id: string;
     readonly name: string;
     readonly configuration: Configuration;
-    readonly statuses: statuses;
+    readonly statuses: Statuses;
 };
 
-export type RobotState = {
-    readonly robots: Robot[]
+export interface RobotLookUp {
+    readonly [id:string]: Robot
+}
+
+export interface RobotState {
+    readonly factory: RobotLookUp;
+    readonly ids: string[];
+    readonly onFires: string[];
+    readonly recycle: string[];
+    readonly seconds: string[];
+    readonly passed: string[];
+    readonly toShip: string[];
 };
+
+export interface AppStatusType
+    { [key: string]: boolean }
+
+export interface AppState {
+    robots: RobotState;
+    appStatus: AppStatusType;
+}
+

@@ -1,15 +1,57 @@
 import * as React from "react";
-import { Robot } from "../models";
+import { RobotState, AppStatusType } from "../models";
+import { MainWrapper } from "./partials/MainWrapper";
+import { List } from "./partials/List";
+import {
+  factoryStyle,
+  recycleStyle,
+  secondsStyle,
+  passedStyle
+} from "../style/";
 export interface AppProps {
-  robots: Robot[];
+  robots: RobotState;
+  appStatus: AppStatusType;
   fetchRobots: () => any;
+  recycleBots: () => any;
+  sendShipment: () => any;
 }
 export class App extends React.Component<AppProps, {}> {
   public componentDidMount() {
     this.props.fetchRobots();
   }
   public render() {
-    console.log("robots", this.props.robots);
-    return <h1>Hello from {this.props.robots} and!</h1>;
+    const { factory, recycle, seconds, passed, toShip } = this.props.robots;
+    const { recycled } = this.props.appStatus;
+    return (
+      <MainWrapper>
+        <List
+          title="Recycled"
+          customStyle={recycleStyle}
+          robots={factory}
+          ids={recycle}
+          recycled={recycled}
+          listAction={this.props.recycleBots}
+        />
+        <List
+          title="Factory Seconds"
+          customStyle={secondsStyle}
+          robots={factory}
+          ids={seconds}
+        />
+        <List
+          title="Passed QA"
+          customStyle={passedStyle}
+          robots={factory}
+          ids={passed}
+        />
+        <List
+          title="Ready To Ship"
+          customStyle={factoryStyle}
+          robots={factory}
+          ids={toShip}
+          listAction={this.props.sendShipment}
+        />
+      </MainWrapper>
+    );
   }
 }

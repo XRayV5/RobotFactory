@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
-import { RobotState } from '../models';
+import { AppState } from '../models';
 import { App } from '../components';
-import { fetchRobots } from '../actions/thunks' 
+import { fetchRobots, recycleBots, sendShipment } from '../actions/' 
 
-const mapStateToProps = (state: RobotState) => ({
-  robots: state.robots,
+const mapStateToProps = ({robots, appStatus}: AppState) => ({
+  robots, appStatus
 });
 
 export const AppContainer = connect(mapStateToProps, {
-    fetchRobots
+    fetchRobots,
+    recycleBots,
+    sendShipment
 })(App);
