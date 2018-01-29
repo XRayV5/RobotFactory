@@ -8,7 +8,7 @@ OR
 ```yarn install```
 to install the dependencies required for the setup the API server.
 
-Then, run:
+* Then, run:
 ```npm run start```
 OR
 ```yarn run start```
@@ -21,3 +21,6 @@ OR
 to start the server for the frontend(running on port 3001).
 
 Finally, open your browser and go to [http://localhost:3001/](http://localhost:3001/) to examine application.
+
+___
+More build/configuration options are specified in "script" section of the package.json files for both RobotFactory and RobotFactoryServer package.
