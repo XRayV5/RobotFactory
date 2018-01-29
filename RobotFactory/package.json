@@ -36,6 +36,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --hot --inline --colors --port 3001 --open",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "start": "node server.js"
   }
 }
