@@ -1,4 +1,4 @@
-# TRIBE Code Challege: Robot Factory
+# Robot Factory
 ## Setup
 * Please make sure PORT 3001, 3000 are both vacant before running the application.
 
