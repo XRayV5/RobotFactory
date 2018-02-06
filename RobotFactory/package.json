@@ -19,12 +19,18 @@
     "utility-types": "^1.0.0"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.1.8",
+    "@types/jest": "^22.1.1",
     "@types/material-ui": "^0.20.5",
     "@types/react": "^16.0.34",
     "@types/react-dom": "^16.0.3",
     "@types/react-redux": "^5.0.14",
     "@types/react-tap-event-plugin": "^0.0.30",
     "awesome-typescript-loader": "^3.4.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.1.4",
+    "react-test-renderer": "^16.2.0",
     "source-map-loader": "^0.2.3",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.6.0",
@@ -38,5 +44,16 @@
     "dev": "webpack-dev-server --hot --inline --colors --port 3001 --open",
     "build": "webpack -p",
     "start": "node server.js"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/test-conf/test-shim.js",
+      "<rootDir>/test-conf/test-setup.js"
+    ],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/test-conf/test-preprocessor.js"
+    },
+    "testMatch": ["**/test/*.(ts|tsx|js)"]
   }
 }

@@ -2,10 +2,10 @@ import * as React from "react";
 import { style } from "typestyle";
 import Android from "material-ui/svg-icons/action/android";
 
-import * as injectTapEventPlugin from 'react-tap-event-plugin';
+import * as injectTapEventPlugin from "react-tap-event-plugin";
 injectTapEventPlugin();
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {MuiThemeProvider, lightBaseTheme} from "material-ui/styles";
+import getMuiTheme from "material-ui/styles/getMuiTheme";
+import { MuiThemeProvider, lightBaseTheme } from "material-ui/styles";
 const lightMuiTheme = getMuiTheme(lightBaseTheme);
 
 /* typestyle css*/
@@ -35,17 +35,19 @@ interface WrapperProps {
 }
 
 export const MainWrapper = (props: WrapperProps) => (
-    <MuiThemeProvider muiTheme={lightMuiTheme}>
-        <div className={base}>
-            <header className={ends}>
-              <h1 style={{ marginLeft: "10px" }}>Robot <Android /> QA</h1>
-            </header>
-            <div className={main}>{props.children}</div>
-            <footer className={ends}>
-            <div style={{ padding: "3%", fontSize: "14px" }}>
-                Copyright © 2018 - All Rights Reserved
-            </div>
-            </footer>
+  <MuiThemeProvider muiTheme={lightMuiTheme}>
+    <div className={base}>
+      <header className={ends}>
+        <h1 style={{ marginLeft: "10px" }}>
+          Robot <Android /> QA
+        </h1>
+      </header>
+      <div className={main}>{props.children}</div>
+      <footer className={ends}>
+        <div style={{ padding: "3%", fontSize: "14px" }}>
+          Copyright © 2018 - All Rights Reserved
         </div>
-    </MuiThemeProvider>
+      </footer>
+    </div>
+  </MuiThemeProvider>
 );
